@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders with no default content expanded. 1`] = `
+<div>
+  <ul>
+    <li>
+      <button
+        onClick={[Function]}
+      >
+        Potatoes
+      </button>
+    </li>
+    <li>
+      <button
+        onClick={[Function]}
+      >
+        Onions
+      </button>
+    </li>
+    <li>
+      <button
+        onClick={[Function]}
+      >
+        Guitars
+      </button>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Returns empty list item, if nothing passed. 1`] = `
+<div>
+  <ul>
+    <li />
+  </ul>
+</div>
+`;

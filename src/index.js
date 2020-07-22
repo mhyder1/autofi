@@ -2,11 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import RouletteGun from "./drills/RouletteGun";
+import Accordion from "./drills/Accordion";
+let Sections = [
+{id:1,title:"Potatoes", content:"Cultivated by aliens."},
+{id:2,title:"Onions", content:"Made of shrek"},
+{id:3,title:"Guitars", content:"My partner knows something about this."}];
+
+
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <RouletteGun bulletInChamber={8}/>
+    <Accordion Sections={Sections}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
