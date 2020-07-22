@@ -2,6 +2,7 @@ import renderer from 'react-test-renderer';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Accordion from './Accordion';
+import { shallow } from 'enzyme';
 
 let Sections = [
     {id:1,title:"Potatoes", content:"Cultivated by aliens."},
@@ -22,7 +23,16 @@ test("Returns empty list item, if nothing passed.",() =>{
 });
 test("Renders with no default content expanded.",() =>{
     let tree = renderer.create(<Accordion Sections={Sections}/>).toJSON();
-    
     expect(tree).toMatchSnapshot();
+});
 
+
+test("Component opens a clicked section.",() =>{
+    let tree = renderer.create(<Accordion Sections={Sections}/>).toJSON();
+
+    const mockCallback = jest.fn();
+    const button = shallow((<button onClick={mockCallback}>{Sections[0].title}</button>));
+    button.find('#2').simulate('click');
+
+    expect(tree).toMatchSnapshot();
 });

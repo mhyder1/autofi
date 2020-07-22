@@ -4,7 +4,7 @@ export default class Accordion extends React.Component
     constructor(props)
     {
         super(props);
-        this.state = {expandedID:1};
+        this.state = {expandedID:null};
     }
     populateList(props)
     {
@@ -18,7 +18,7 @@ export default class Accordion extends React.Component
             
             console.log(section);
             return <li key={section.id}>
-                        <button onClick={() => this.btnHandler(section.id)}>
+                        <button onClick={() => this.btnHandler(section.id)} id={section.id}>
                             {section.title}
                         </button>
                         {this.hide(section)}
