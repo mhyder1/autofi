@@ -1,34 +1,45 @@
 import React from 'react';
-export default class Bomb extends React.Component {
+export default class RouletteGun extends React.Component {
     
     constructor(props){
         super(props);
-        this.state = {count: 0, text: ""};
+        this.state = {chamber:null, spinningTheChamber:false};
     }
     
-    handleClick = () => {};
-
-    tickTock = (count) => {
-        if (count%2){
-            this.setState({text:"Tock"});
-        }else if (count >= 8){
-            this.setState({text:"BOOM!!!"});
-            clearInterval(this.timer);
-
-        }else{
-            this.setState({text:"Tick"});
-        }
+    clickHandle()
+    {
+        this.setState({spinningTheChamber:true});
+        
+        setTimeout(() => {
+            this.setState({spinningTheChamber:false});
+            this.setState({chamber: Math.ceil(Math.random()*8)});
+            
+        }, 2000);
     }
+    Roulette(props)
+    {
+        console.log(this.state.chamber);
+        if(this.state.spinningTheChamber)
+        {
+            return "spinning the chamber and pulling the trigger!";
+        }
+        else if(!this.state.spinningTheChamber && this.state.chamber === props.bulletInChamber)
+        {
+            return "BANG!!";
+        }
+        else if(this.state.chamber === null)
+        {
+            return "";
+        }
+        else
+        {
+            return "Safe.. phew.";
+        }
+    }    
 
     componentDidMount(){
         
-        this.timer = setInterval(
-            () => {
-                this.tickTock(this.state.count);
-                this.setState({count: this.state.count + 1})
-            }, 
-                1000
-        )
+        
     }
     componentWillUnmount(){
         console.log("unmounted")
@@ -37,8 +48,10 @@ export default class Bomb extends React.Component {
 
     render(){
         //setInterval() { => }
+        console.log(this.state.spinningTheChamber);
         return (<div>
-                    <p>{this.state.text}</p>
+                    <p>{this.Roulette(this.props)}</p>
+                    <button onClick={() => this.clickHandle()}>Pull Trigger</button>
                 </div>)
     }
 }
