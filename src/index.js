@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import HelloWorld from "./drills/HelloWorld";
 import * as serviceWorker from './serviceWorker';
+import Bomb from "./drills/Bomb";
 
 ReactDOM.render(
   <React.StrictMode>
-    <HelloWorld />
+    <Bomb />
   </React.StrictMode>,
   document.getElementById('root')
 );
