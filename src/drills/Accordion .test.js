@@ -27,12 +27,4 @@ test("Renders with no default content expanded.",() =>{
 });
 
 
-test("Component opens a clicked section.",() =>{
-    let tree = renderer.create(<Accordion Sections={Sections}/>).toJSON();
 
-    const mockCallback = jest.fn();
-    const button = shallow((<button onClick={mockCallback}>{Sections[0].title}</button>));
-    button.find('#2').simulate('click');
-
-    expect(tree).toMatchSnapshot();
-});
