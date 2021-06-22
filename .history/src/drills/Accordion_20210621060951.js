@@ -8,9 +8,9 @@ export default function Accordion({sections = []}) {
     return sections.map(({id, title, content}, index) => (
         <li key={id}>
           <button onClick={() => setExpandedID(id === expandedID ? null : id)}>
-            {title} {/* posts */}
+            {title}
           </button>
-          { expandedID === id && <p>{content}</p> } {/* comments */}
+          { expandedID === id && <p>{content}</p> }
         </li>
     ));
   }

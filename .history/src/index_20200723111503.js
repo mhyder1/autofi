@@ -7,7 +7,7 @@ import Bomb from "./drills/Bomb";
 import HelloWorld from "./drills/HelloWorld";
 import RouletteGun from "./drills/RouletteGun";
 import Tabs from './drills/Tabs'
-let sections = [
+let Sections = [
 {id:1,title:"Potatoes", content:"Cultivated by aliens."},
 {id:2,title:"Onions", content:"Made of shrek"},
 {id:3,title:"Guitars", content:"My partner knows something about this."}];
@@ -24,7 +24,7 @@ const tabsProp = [
 
 ReactDOM.render(
   <React.StrictMode>
-    <Accordion sections={sections}/>
+    <Accordion Sections={Sections}/>
     {/* <Tabs tabs={tabsProp} /> */}
   </React.StrictMode>,
   document.getElementById('root')

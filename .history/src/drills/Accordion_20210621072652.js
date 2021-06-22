@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-export default function Accordion({sections = []}) {
+export default function Accordion() {
+
+  let sections = [
+    {id:1,title:"Potatoes", content:"Cultivated by aliens."},
+    {id:2,title:"Onions", content:"Made of shrek"},
+    {id:3,title:"Guitars", content:"My partner knows something about this."}];
 
   const [ expandedID, setExpandedID ] = useState(null)
   const [ currentIndex, setCurrentIndex ] = useState(null)
