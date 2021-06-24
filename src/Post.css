@@ -1,0 +1,7 @@
+.posts {
+    list-style: none;
+}
+
+.posts h2 {
+    cursor: pointer;
+}

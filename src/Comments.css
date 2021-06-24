@@ -1,0 +1,8 @@
+.comments {
+    margin-left: 20px;
+    border-bottom: 1px solid black;
+}
+
+.comments span {
+    font-weight: bold;
+}
